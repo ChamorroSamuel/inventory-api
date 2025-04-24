@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using InventoryApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -60,6 +61,8 @@ builder.Services.AddSwaggerGen(c =>
          }
      });
  });
+
+builder.Services.AddHostedService<LowInventoryNotificationService>();
 
 var app = builder.Build();
 
