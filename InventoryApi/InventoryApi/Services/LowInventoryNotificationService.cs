@@ -7,7 +7,7 @@ namespace InventoryApi.Services
     public class LowInventoryNotificationService : BackgroundService
     {
         private readonly IServiceProvider _prov;
-        private readonly TimeSpan _interval = TimeSpan.FromMinutes(1);
+        private readonly TimeSpan _interval = TimeSpan.FromSeconds(10);
 
         public LowInventoryNotificationService(IServiceProvider prov)
         {

@@ -37,16 +37,43 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
  {
      c.SwaggerDoc("v1", new OpenApiInfo { Title = "Inventory API", Version = "v1" });
+     
+     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+     {
+         Name = "Authorization",
+         Type = SecuritySchemeType.Http,
+         Scheme = "Bearer",
+         BearerFormat = "JWT",
+         In = ParameterLocation.Header,
+         Description = "Ingrese **Bearer &lt;token&gt;**"
+     });
+     
+     c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+         {
+             new OpenApiSecurityScheme {
+                 Reference = new OpenApiReference {
+                     Type = ReferenceType.SecurityScheme,
+                     Id = "Bearer"
+                 }
+             },
+             Array.Empty<string>()
+         }
+     });
  });
 
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
 
 app.UseCors();
 app.UseSwagger();
 app.UseSwaggerUI(c =>
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Inventory API V1")
 );
-
+app.UseCors("AllowAngular");
 app.UseAuthentication();
 app.UseAuthorization();
 
