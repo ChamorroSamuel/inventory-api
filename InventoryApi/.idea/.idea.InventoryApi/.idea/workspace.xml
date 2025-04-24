@@ -9,14 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="891e352e-c0f3-4b9a-8b55-10eb6800f667" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/InventoryApi/Controllers/AuthController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InventoryApi/Controllers/ProductsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InventoryApi/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InventoryApi/Models/Product.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventoryApi/Controllers/NotificationsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventoryApi/Models/Notification.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventoryApi/Services/LowInventoryNotificationService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InventoryApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InventoryApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Controllers/TestController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryApi/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Data/ApplicationDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InventoryApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,30 +27,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2w9ip0gnUlZh7mTXvxTSNaViKDr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.InventoryApi: http.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "develop",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.InventoryApi: http.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.InventoryApi: http">
     <configuration name="InventoryApi: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/InventoryApi/InventoryApi.csproj" />
@@ -94,6 +92,7 @@
       <updated>1745459991961</updated>
       <workItem from="1745459995226" duration="374000" />
       <workItem from="1745460370250" duration="4346000" />
+      <workItem from="1745509707913" duration="654000" />
     </task>
     <servers />
   </component>

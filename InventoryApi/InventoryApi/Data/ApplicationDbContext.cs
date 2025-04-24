@@ -9,5 +9,6 @@ namespace InventoryApi.Data
             : base(opts) { }
 
         public DbSet<Product> Products { get; set; } = null!;
+        public DbSet<Notification> Notifications { get; set; } = null!;
     }
 }
