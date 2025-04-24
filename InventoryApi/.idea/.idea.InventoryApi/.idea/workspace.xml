@@ -9,8 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="891e352e-c0f3-4b9a-8b55-10eb6800f667" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/InventoryApi/Controllers/ReportsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventoryApi/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InventoryApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InventoryApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryApi/InventoryApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/InventoryApi.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +90,7 @@
       <updated>1745459991961</updated>
       <workItem from="1745459995226" duration="374000" />
       <workItem from="1745460370250" duration="4346000" />
-      <workItem from="1745509707913" duration="6750000" />
+      <workItem from="1745509707913" duration="8918000" />
     </task>
     <servers />
   </component>
