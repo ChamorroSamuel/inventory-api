@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryApi", "InventoryApi\InventoryApi.csproj", "{31DCAEFE-D8A9-462A-983A-770406E9B7D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryApi", "InventoryApi\InventoryApi.csproj", "{BD0928D5-D5A8-4B05-8146-B5BC5BAEDEDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{31DCAEFE-D8A9-462A-983A-770406E9B7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31DCAEFE-D8A9-462A-983A-770406E9B7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31DCAEFE-D8A9-462A-983A-770406E9B7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31DCAEFE-D8A9-462A-983A-770406E9B7D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD0928D5-D5A8-4B05-8146-B5BC5BAEDEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD0928D5-D5A8-4B05-8146-B5BC5BAEDEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD0928D5-D5A8-4B05-8146-B5BC5BAEDEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD0928D5-D5A8-4B05-8146-B5BC5BAEDEDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
