@@ -9,8 +9,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="891e352e-c0f3-4b9a-8b55-10eb6800f667" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/InventoryApi/Models/Roles.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventoryApi/Models/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InventoryApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InventoryApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryApi/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryApi/Controllers/ProductsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Controllers/ProductsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryApi/Controllers/ReportsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Controllers/ReportsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryApi/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Data/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryApi/InventoryApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/InventoryApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +31,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -90,6 +102,9 @@
       <workItem from="1745459995226" duration="374000" />
       <workItem from="1745460370250" duration="4346000" />
       <workItem from="1745509707913" duration="9394000" />
+      <workItem from="1745553196283" duration="2990000" />
+      <workItem from="1745558611543" duration="3537000" />
+      <workItem from="1745592637622" duration="6900000" />
     </task>
     <servers />
   </component>

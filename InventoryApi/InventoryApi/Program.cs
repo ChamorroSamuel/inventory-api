@@ -5,11 +5,17 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using InventoryApi.Services;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<ApplicationDbContext>(opts =>
-    opts.UseInMemoryDatabase("InventoryDb"));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MySqlServerVersion(new Version(8, 0, 32))  // pon tu versión de MySQL
+    )
+);
     
 var jwtKey = builder.Configuration["Jwt:Key"]!;
 var key = Encoding.UTF8.GetBytes(jwtKey);

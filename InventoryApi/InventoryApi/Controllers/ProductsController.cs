@@ -13,13 +13,13 @@ namespace InventoryApi.Controllers
         private readonly ApplicationDbContext _db;
         public ProductsController(ApplicationDbContext db) => _db = db;
 
-        // —— GET /api/products  (cualquiera autenticado)
+        // —— GET /api/products  
         [HttpGet]
         [Authorize] 
         public async Task<ActionResult<IEnumerable<Product>>> GetAll()
             => Ok(await _db.Products.ToListAsync());
 
-        // —— GET /api/products/{id}  (cualquiera autenticado)
+        // —— GET /api/products/{id} 
         [HttpGet("{id}")]
         [Authorize]
         public async Task<ActionResult<Product>> Get(Guid id)
@@ -29,9 +29,11 @@ namespace InventoryApi.Controllers
             return Ok(p);
         }
 
-        // —— POST /api/products  (SOLO Administrador)
+        // —— POST /api/products  
         [HttpPost]
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = Roles.Administrador 
+            //+ "," + Roles.Supervisor
+            )]
         public async Task<ActionResult<Product>> Create([FromBody] CreateProductDto dto)
         {
             var p = new Product {
@@ -47,9 +49,9 @@ namespace InventoryApi.Controllers
             return CreatedAtAction(nameof(Get), new { id = p.Id }, p);
         }
 
-        // —— PUT /api/products/{id}  (SOLO Administrador)
+        // —— PUT /api/products/{id} 
         [HttpPut("{id}")]
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = Roles.Administrador)]
         public async Task<IActionResult> Update(Guid id, [FromBody] UpdateProductDto dto)
         {
             var product = await _db.Products.FindAsync(id);
@@ -67,7 +69,7 @@ namespace InventoryApi.Controllers
 
         // —— DELETE /api/products/{id}  (SOLO Administrador)
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = Roles.Administrador)]
         public async Task<IActionResult> Delete(Guid id)
         {
             var p = await _db.Products.FindAsync(id);
