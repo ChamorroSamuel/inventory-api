@@ -1,17 +1,17 @@
 ﻿# Inventory Management API
 
-Este repositorio contiene la implementación del **backend** del sistema de gestión de inventarios para una tienda en línea, construido con **.NET 9.0** y **Entity Framework Core**.
+Este repositorio contiene la implementación del **backend** del sistema de gestión de inventarios para una tienda en línea, construido con **.NET 8.0** y **Entity Framework Core**.
 
 ## Tabla de contenido
 
-- [Características](#caracter%C3%ADsticas)
+- [Características](#características)
 - [Requisitos previos](#requisitos-previos)
-- [Instalación y ejecución](#instalaci%C3%B3n-y-ejecuci%C3%B3n)
-- [Configuración](#configuraci%C3%B3n)
+- [Instalación y ejecución](#instalación-y-ejecución)
+- [Configuración](#configuración)
 - [Endpoints de la API](#endpoints-de-la-api)
-- [Autenticación y autorización](#autenticaci%C3%B3n-y-autorizaci%C3%B3n)
+- [Autenticación y autorización](#autenticación-y-autorización)
 - [Notificaciones de inventario bajo](#notificaciones-de-inventario-bajo)
-- [Generación de reporte PDF](#generaci%C3%B3n-de-reporte-pdf)
+- [Generación de reporte PDF](#generación-de-reporte-pdf)
 - [Estructura de carpetas](#estructura-de-carpetas)
 - [Contribuciones](#contribuciones)
 
@@ -20,16 +20,24 @@ Este repositorio contiene la implementación del **backend** del sistema de gest
 ## Características
 
 - **Autenticación** basada en JWT.
-- **Roles**: `Administrador` y `Empleado`.
+- **Roles**: `Administrador`, `Empleado` y `Supervisor`.
 - **CRUD** completo de productos.
-- **Notificaciones** automáticas de inventario bajo (cantidad menor a 5).
+- **Notificaciones** automáticas de inventario bajo (cantidad menor a 5 unidades).
 - **Reporte PDF** de productos con inventario bajo.
-- API RESTful siguiendo buenas prácticas HTTP.
+- **Reporte PDF** de todos los productos usando **PdfSharpCore**.
+- **Seguridad** de endpoints por roles.
+- **Separación por capas** siguiendo una estructura limpia (inspirada en Clean Architecture).
+- **Integración con Docker** para MySQL.
+
+---
 
 ## Requisitos previos
 
-- [.NET SDK 9.0](https://dotnet.microsoft.com/download)
-- **IDE**: Visual Studio, Rider u otro compatible con .NET.
+- [.NET SDK 8.0](https://dotnet.microsoft.com/en-us/download)
+- [Angular CLI](https://angular.io/cli)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop)
+
+---
 
 ## Instalación y ejecución
 
@@ -37,67 +45,129 @@ Este repositorio contiene la implementación del **backend** del sistema de gest
    ```bash
    git clone https://github.com/tu-org/inventory-api.git
    cd inventory-api
+   ```
 
-2. Restaura paquetes y compila:
+2. Restaura paquetes y compila el backend:
    ```bash
    dotnet restore
    dotnet build
-   
-3. Ejecuta la aplicación:
-    ```bash
-   dotnet run
+   ```
 
+3. Corre la base de datos MySQL en Docker:
+   ```bash
+   docker run -d --name inventory-mysql \
+   -e MYSQL_ROOT_PASSWORD=TuPass123 \
+   -e MYSQL_DATABASE=InventoryDb \
+   -p 3306:3306 mysql:8.0
+   ```
+
+4. Aplica las migraciones para crear la base de datos:
+   ```bash
+   dotnet ef database update
+   ```
+
+5. Ejecuta la API:
+   ```bash
+   dotnet run
+   ```
+
+✅ La API estará corriendo en `http://localhost:5202`.
+
+---
 
 ## Configuración
 
-Todas las variables de configuración están en el archivo appsettings.json:
-        
+La configuración básica está en el archivo `appsettings.json`:
+
+```json
+{
+  "Jwt": {
+    "Key": "ClaveSuperSecretaMuyLarga1234567890!!!KeyExtra"
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;Database=InventoryDb;User=root;Password=TuPass123;"
+  },
+  "AllowedHosts": "*"
+}
+```
+
+---
 
 ## Endpoints de la API
 
 | Ruta                         | Método | Descripción                                  | Roles permitidos        |
-|------------------------------|:------:|----------------------------------------------|-------------------------|
-| `/api/login`                 | POST   | Generar JWT para autenticación               | Anónimo                 |
-| `/api/register`              | POST   | Registrar nuevo usuario                      | Anónimo                 |
-| `/api/products`              | GET    | Obtener lista de productos                   | Autenticado             |
-| `/api/products/{id}`         | GET    | Obtener detalle de un producto               | Autenticado             |
-| `/api/products`              | POST   | Crear nuevo producto                         | `Administrador`         |
-| `/api/products/{id}`         | PUT    | Actualizar un producto                       | `Administrador`         |
-| `/api/products/{id}`         | DELETE | Eliminar un producto                         | `Administrador`         |
-| `/api/notifications`         | GET    | Listar notificaciones de inventario bajo     | `Administrador`         |
-| `/api/notifications/check`   | POST   | (Test) Forzar chequeo de notificaciones      | `Administrador`         |
-| `/api/reports/low-inventory` | GET    | Descargar PDF de inventario bajo             | `Administrador`         |
+|-------------------------------|:------:|----------------------------------------------|-------------------------|
+| `/api/login`                  | POST   | Generar JWT para autenticación               | Anónimo                 |
+| `/api/register`               | POST   | Registrar nuevo usuario                     | Anónimo                 |
+| `/api/products`               | GET    | Obtener lista de productos                   | Autenticado             |
+| `/api/products/{id}`          | GET    | Obtener detalle de un producto               | Autenticado             |
+| `/api/products`               | POST   | Crear nuevo producto                         | `Administrador` o `Supervisor` |
+| `/api/products/{id}`          | PUT    | Actualizar un producto                       | `Administrador` o `Supervisor` |
+| `/api/products/{id}`          | DELETE | Eliminar un producto                         | `Administrador`         |
+| `/api/notifications`          | GET    | Listar notificaciones de inventario bajo     | `Administrador`         |
+| `/api/notifications/check`    | POST   | Forzar chequeo manual de notificaciones      | `Administrador`         |
+| `/api/reports/low-inventory`  | GET    | Descargar PDF de productos con stock bajo    | `Administrador`         |
+| `/api/reports/all-pdfsharp`   | GET    | Descargar PDF de todos los productos         | `Administrador`         |
 
+---
 
 ## Autenticación y autorización
 
 - La API usa **Bearer JWT**.
-- Para endpoints protegidos, envía el header:
+- Para acceder a endpoints protegidos debes enviar el token en el header:
 
-## Authorization: Bearer {token}
+```bash
+Authorization: Bearer {token}
+```
 
-- El token se obtiene en `/api/login`.
+- El token se obtiene a través del endpoint `/api/login`.
+
+---
 
 ## Notificaciones de inventario bajo
 
-- Un `HostedService` corre periódicamente (por defecto cada 60s) y crea notificaciones en BD cuando `Quantity < 5`.
-- Puedes forzar la ejecución inmediata con:
-  ```bash
-  POST /api/notifications/check
+- Un servicio automático verifica los productos cada minuto.
+- Si detecta que la cantidad de stock es menor a 5, crea una notificación.
+- Solo los **administradores** ven las notificaciones en el frontend.
+- También puedes forzar manualmente una verificación con:
+
+```bash
+POST /api/notifications/check
+```
+
+---
 
 ## Generación de reporte PDF
 
-- El endpoint `/api/reports/low-inventory` genera un PDF con todos los productos con `Quantity < 5`.
-- El PDF incluye:
-    - Título y fecha de generación.
-    - Tabla con `Name`, `Category` y `Quantity`.
-    - Paginación automática si hay muchas filas.
+- **Reporte de productos con stock bajo**:
+  ```bash
+  GET /api/reports/low-inventory
+  ```
+- **Reporte de todos los productos** (generado con PdfSharpCore):
+  ```bash
+  GET /api/reports/all-pdfsharp
+  ```
+
+---
 
 ## Estructura de carpetas
 
-/Controllers # Controladores API /Data # DbContext e inicialización /Models # Entidades y DTOs /Services # HostedService para notificaciones /Program.cs # Configuración y arranque /appsettings.json /README.md # Este archivo
+```
+/Controllers           # Controladores API
+/Domain/Entities       # Entidades de negocio (Product, Notification, User)
+/Migrations            # Migraciones de Entity Framework Core
+/DTOs                # DTOs para requests/responses
+/Services              # Servicios internos (notificaciones de stock bajo)
+Program.cs             # Configuración de la aplicación
+appsettings.json       # Configuración de JWT, DB, etc.
+```
 
-## Contribuciones
+---
 
-¡Bienvenidas! Por favor abre un _issue_ o un _pull request_.
 
+## Notas adicionales
+
+- Para ambientes de producción recomiendo:
+    - Encriptar contraseñas.
+    - Validar correctamente los datos de entrada.
+    - Implementar roles más granulares si es necesario.
