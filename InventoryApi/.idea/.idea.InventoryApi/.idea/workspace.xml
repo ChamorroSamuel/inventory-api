@@ -9,31 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="891e352e-c0f3-4b9a-8b55-10eb6800f667" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/InventoryApi/Application/Interfaces/INotificationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InventoryApi/Application/Interfaces/IProductService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InventoryApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InventoryApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Api/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Controllers/NotificationsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Api/Controllers/NotificationsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Controllers/ProductsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Api/Controllers/ProductsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Controllers/ReportsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Api/Controllers/ReportsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Infrastructure/Persistence/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/InventoryApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/InventoryApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Migrations/20250425053141_InitialCreate.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Infrastructure/Persistence/Migrations/20250425053141_InitialCreate.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Migrations/20250425053141_InitialCreate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Infrastructure/Persistence/Migrations/20250425053141_InitialCreate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Migrations/20250425150945_AddUserEntity.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Infrastructure/Persistence/Migrations/20250425150945_AddUserEntity.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Migrations/20250425150945_AddUserEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Infrastructure/Persistence/Migrations/20250425150945_AddUserEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Infrastructure/Persistence/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Models/CreateProductDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Application/DTOs/CreateProductDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Models/LoginRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Application/DTOs/LoginRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Models/Notification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Domain/Entities/Notification.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Models/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Domain/Entities/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Models/RegisterRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Application/DTOs/RegisterRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Models/Roles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Domain/ValueObjects/Roles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Models/UpdateProductDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Application/DTOs/UpdateProductDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Domain/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Api/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InventoryApi/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Services/LowInventoryNotificationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Application/Services/LowInventoryNotificationService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +96,7 @@
       <workItem from="1745509707913" duration="9394000" />
       <workItem from="1745553196283" duration="2990000" />
       <workItem from="1745558611543" duration="3537000" />
-      <workItem from="1745592637622" duration="15370000" />
+      <workItem from="1745592637622" duration="15559000" />
     </task>
     <servers />
   </component>

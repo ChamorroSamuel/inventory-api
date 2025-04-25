@@ -1,6 +1,6 @@
 ﻿# Inventory Management API
 
-Este repositorio contiene la implementación del **backend** del sistema de gestión de inventarios para una tienda en línea, construido con **.NET 8.0** y **Entity Framework Core**.
+Este repositorio contiene la implementación del **backend** del sistema de gestión de inventarios para una tienda en línea, construido con **.NET 9 .0** y **Entity Framework Core**.
 
 ## Tabla de contenido
 
@@ -33,7 +33,7 @@ Este repositorio contiene la implementación del **backend** del sistema de gest
 
 ## Requisitos previos
 
-- [.NET SDK 8.0](https://dotnet.microsoft.com/en-us/download)
+- [.NET SDK 9.0](https://dotnet.microsoft.com/en-us/download)
 - [Angular CLI](https://angular.io/cli)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
