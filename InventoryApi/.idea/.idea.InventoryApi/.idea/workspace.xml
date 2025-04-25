@@ -9,16 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="891e352e-c0f3-4b9a-8b55-10eb6800f667" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/InventoryApi/Models/Roles.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InventoryApi/Models/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InventoryApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InventoryApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Controllers/ProductsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Controllers/ProductsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Controllers/ReportsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Controllers/ReportsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/InventoryApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/InventoryApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventoryApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryApi/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +95,7 @@
       <workItem from="1745509707913" duration="9394000" />
       <workItem from="1745553196283" duration="2990000" />
       <workItem from="1745558611543" duration="3537000" />
-      <workItem from="1745592637622" duration="6900000" />
+      <workItem from="1745592637622" duration="8824000" />
     </task>
     <servers />
   </component>
